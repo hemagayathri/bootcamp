@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Exercise 3</title>
+</head>
+<body style="background-color:#F0F8FF; color: green; font-family: Arial;">
+    <h2 align="center">Taxi Booking</h2>
+    <form>
+        <div>
+            <label>Name </label>
+            <input type="text", name="name">
+        </div>
+        <br>
+        <div>
+            <label>Phone </label>
+            <input type="number", name="phone">
+        </div>
+        <br>
+        <div>
+            <label>Email </label>
+            <input type="email" name="email">
+        </div>
+        <br>
+        <div>
+            <label>Which taxi do you require? </label>
+            <input type="radio" name="taxi" value="car">Car
+            <input type="radio" name="taxi" value="Male">Van
+            <input type="radio" name="taxi" value="Male">Tuk Tuk
+        </div>
+        <br>
+        <div>
+            <label>Extras </label>
+            <input type="checkbox" name="extras" value="car">Baby Seat
+            <input type="checkbox" name="extras" value="wheelChair">WheelChair Access
+            <input type="checkbox" name="extras" value="stockTip">Stock Tip
+        </div>
+        <br>
+        <div>
+            <label>Pick Up Date/Time </label>
+            <input type="datetime-local" name="pickUp">
+        </div>
+        <br>
+        <div>
+            <label>Pick Up Place </label>
+            <select name="pickPlace" id="pickPlace">
+                <option value="select">--Select--</option>
+                <option value="Pittsburgh">Pittsburgh</option>
+                <option value="Mars">Mars</option>
+                <option value="Washington">Washington</option>
+                <option value="Mt Lebanon">Mt Lebanon</option>
+                <option value="Moon">Clinton</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Drop Off Place </label>
+            <select name="dropPlace" id="dropPlace">
+                <option value="select">--Select--</option>
+                <option value="Pittsburgh">Pittsburgh</option>
+                <option value="Mars">Mars</option>
+                <option value="Washington">Washington</option>
+                <option value="Mt Lebanon">Mt Lebanon</option>
+                <option value="Moon">Clinton</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Special Instructions </label>
+            <textarea name="dropPlace" rows=6 cols=50></textarea>
+        </div>
+        <br>
+        <div><button style="background-color:darkgreen; color:lightblue; font-family: Arial;">Submit</button></div>
+        <br>
+    </form>
+</body>
+</html>
