@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header{
+        height: 100vh;
+        background: #333 url(https://images.unsplash.com/photo-1613164700544-23ea1f4f350e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGl0dHNidXJnaCUyMHBlbm5zeWx2YW5pYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60)no-repeat center center/cover;
+        text-align: center;
+        
+    }
+    .navbar{
+        display: flex;
+        justify-content:space-between;
+        background-color: grey;
+        color: #ffffff;
+        height: 50px;
+        padding: 10px 30px;
+    }
+    .navbar ul{
+        display: flex;
+    }
+    ul{
+        list-style: none;
+    }
+    .navbar a{
+        padding: 10px 20px;
+        color: #fff;
+    }
+    h1{
+        line-height: 1.2;
+        margin-top: 8px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .navbar a:hover{
+        border-bottom: #345455 2px solid;
+    }
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+
+    .dropdown{
+        position: relative;
+        display:inline-block;
+    }
+
+    .dropdown-content {
+padding-top: 8px;
+padding-bottom: 8px;
+  display: none;
+  position: absolute;
+  background-color: #345455;
+  min-width: 100px;
+}
+.dropdown-content a{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+</style>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Sai Tech</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown"><a href="#">Clients</a><!--</li>-->
+                <div class="dropdown-content">
+                    <a href="#">Pittsburgh</a>
+                    <a href="#">Mars</a>
+                    <a href="#">Washington</a>
+                </div>
+                </li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+</body>
+</html>
