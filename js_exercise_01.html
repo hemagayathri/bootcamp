@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-style: solid;
+        }
+        td{
+            border-style: solid;
+        }
+        th {
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <label>First Name</label>
+    <input type="text" name="firstName" id="formFirstName">
+    <br/>
+    <label>Last Name</label>
+    <input type="text" name="lastName" id="formLastName">
+    <br/>
+    <label>SSN</label>
+    <input type="text" name="ssn" id="formSsn">
+    <br/>
+    <label>Address</label>
+    <input type="text" name="address" id="formAddress">
+    <br/>
+    <label>City</label>
+    <input type="text" name="city" id="formCity">
+    <br/>
+    <label>State</label>
+    <input type="text" name="state" id="formState">
+    <br/>
+    <label>Phone</label>
+    <input type="text" name="phone" id="formPhone">
+    <br/>
+    <label>email</label>
+    <input type="text" name="email" id="formEmail">
+    <br/>
+    <table id="userDetailsTable">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>SSN</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr id="tr1">
+                <td id="firstName1"></td>
+                <td id="lastName1"></td>
+                <td id="ssn1"></td>
+                <td id="address1"></td>
+                <td id="city1"></td>
+                <td id="state1"></td>
+                <td id="phone1"></td>
+                <td id="email1"></td>
+                <td><button id="populate" onclick="populate(1)">Populate</button></td>
+            </tr>
+            <tr id="tr2">
+                <td id="firstName2"></td>
+                <td id="lastName2"></td>
+                <td id="ssn2"></td>
+                <td id="address2"></td>
+                <td id="city2"></td>
+                <td id="state2"></td>
+                <td id="phone2"></td>
+                <td id="email2"></td>
+                <td><button id="populate" onclick="populate(2)">Populate</button></td>
+            </tr>
+            <tr id="tr3">
+                <td id="firstName3"></td>
+                <td id="lastName3"></td>
+                <td id="ssn3"></td>
+                <td id="address3"></td>
+                <td id="city3"></td>
+                <td id="state3"></td>
+                <td id="phone3"></td>
+                <td id="email3"></td>
+                <td><button id="populate" onclick="populate(3)">Populate</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    var userDetails = [
+        {firstName:'Hema', lastname:'Laks', ssn:123344356, address: '123, rfsf', city: 'Mars', state:'PA', phone:'1323432', email:'sd@df.com'},
+        {firstName:'Harshitha', lastname:'Laks', ssn:123344356, address: '123, rfsf', city: 'Mars', state:'PA', phone:'1323432', email:'sd@df.com'},
+        {firstName:'Sai', lastname:'Laks', ssn:123344356, address: '123, rfsf', city: 'Mars', state:'PA', phone:'1323432', email:'sd@df.com'}
+    ]
+
+    for(i=0; i<4; i++) {
+    document.getElementById("firstName"+(i+1)).innerHTML=userDetails[i].firstName;
+    document.getElementById("lastName"+(i+1)).innerHTML=userDetails[i].lastname;
+    document.getElementById("ssn"+(i+1)).innerHTML=userDetails[i].ssn;
+    document.getElementById("address"+(i+1)).innerHTML=userDetails[i].address;
+    document.getElementById("city"+(i+1)).innerHTML=userDetails[i].city;
+    document.getElementById("state"+(i+1)).innerHTML=userDetails[i].state;
+    document.getElementById("phone"+(i+1)).innerHTML=userDetails[i].phone;
+    document.getElementById("email"+(i+1)).innerHTML=userDetails[i].email;
+    }
+    function populate(rowNo) {
+    var userDetails = [
+        {firstName:'Hema', lastname:'Laks', ssn:123344356, address: '123, rfsf', city: 'Mars', state:'PA', phone:'1323432', email:'sd@df.com'},
+        {firstName:'Harshitha', lastname:'Laks', ssn:123344356, address: '123, rfsf', city: 'Mars', state:'PA', phone:'1323432', email:'sd@df.com'},
+        {firstName:'Sai', lastname:'Laks', ssn:123344356, address: '123, rfsf', city: 'Mars', state:'PA', phone:'1323432', email:'sd@df.com'}
+    ]
+    document.getElementById("formFirstName").value=userDetails[rowNo-1].firstName;
+    document.getElementById("formLastName").value=userDetails[rowNo-1].lastname;
+    document.getElementById("formSsn").value=userDetails[rowNo-1].ssn;
+    document.getElementById("formAddress").value=userDetails[rowNo-1].address;
+    document.getElementById("formCity").value=userDetails[rowNo-1].city;
+    document.getElementById("formState").value=userDetails[rowNo-1].state;
+    document.getElementById("formPhone").value=userDetails[rowNo-1].phone;
+    document.getElementById("formEmail").value=userDetails[rowNo-1].email;
+
+}
+</script>
+</html>
