@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width-device-width, initial-scale=1.0"/>
+</head>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+ body {
+  padding: 20px;
+}
+button {
+  margin-top: 2px;
+  line-height: 30px;
+  font-weight: bold;
+  padding: 0 20px;
+  background: salmon;
+  border: none;
+}
+</style>
+
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>State</th>
+        <th>SSN</th>
+        <th>Populate</th>
+       
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+	var myArray = [
+    
+        {
+            'FirstName': 'John', 'LastName': 'Doe', 'email': 'john@gmail.com','Phone':1234567891, 'Address':'123 Main St', 'State':'MD', 'SSN':'1235479564'
+          },
+          {
+            'FirstName': 'Paul', 'LastName': 'Debecker', 'email': 'pauldeb@gmail.com','Phone':9876543291, 'Address':'51 West St', 'State':'MD', 'SSN':'7489546121'
+          },
+          {
+            'FirstName': 'Sam', 'LastName': 'Anderson', 'email': 'samad@gmail.com','Phone':7741544522, 'Address':'121 East St', 'State':'MD', 'SSN':'458768641'
+          },
+          {
+            'FirstName': 'Tay', 'LastName': 'Green', 'email': 'taygre@gmail.com','Phone':9784514264, 'Address':'784 north St', 'State':'CA', 'SSN':'45757484'
+          }
+    ]
+    
+	
+	
+	buildTable(myArray)
+    var button = document.createElement("button");
+    button.innerHTML = "Populate";
+    function buildTable(data){
+		var table = document.getElementById('myTable')
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].FirstName}</td>
+							<td>${data[i].LastName}</td>
+							<td>${data[i].email}</td>
+                            <td>${data[i].Phone}</td>
+                            <td>${data[i].Address}</td>
+                            <td>${data[i].State}</td>
+                            <td>${data[i].SSN}</td>
+                           <td><button class=" +"Populate" +">Populate</button></td>
+                            </tr>`
+			table.innerHTML += row
+           
+		}
+ 
+	}
+
+</script>

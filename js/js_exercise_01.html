@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    body {
+        line-height: 1.2;
+    }
+
+    .wrap {
+        width: 100%;
+        overflow: auto;
+    }
+
+    .fleft {
+        float: left;
+        width: 50%;
+        height: 500px;
+        padding-top: 20px;
+        text-align: center;
+
+    }
+
+    .ltable {
+
+        float: right;
+        margin-right: 30%;
+
+
+    }
+
+    .rtable {
+        float: right;
+        margin-right: 50%;
+
+    }
+
+    .fright {
+        float: right;
+        height: auto;
+        width: 48%;
+        margin-left: 20px;
+    }
+
+    div.container2.visible {
+        display: block;
+    }
+
+    div.container2 {
+        display: none;
+    }
+
+    dd {
+        display: flex;
+        margin-inline-start: 40px;
+    }
+
+    output.fail {
+        color: red;
+    }
+
+    output.pass {
+        color: green;
+    }
+
+    th {
+        color: #fff;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    button {
+        margin-top: 2px;
+        line-height: 30px;
+        font-weight: bold;
+        padding: 0 20px;
+        background: salmon;
+        border: none;
+    }
+</style>
+
+<body>
+    <section>
+                <form>
+
+                    <div class="fleft">
+                        <div class="ltable">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label>First Name:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="fname" id="fname">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label>Last Name:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="lname" id="lname">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>SSN:</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="ssn" id="ssn">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Address:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="address" id="address">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>City:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="city" id="city">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>State:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="state" id="state">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Phone:</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="phone" id="phone">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Email</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="email" id="email">
+                                    </td>
+                                </tr>
+                            </table>
+                            <button class="btn" type="submit" onclick="return submitForm()"> Verify</button>
+                        </div>
+                    </div>
+
+                    <div class="fright">
+                        <div class="container2" id="datarev">
+                            <dl>
+                                <dt> <output id="ofName" name="ofName"> </output></dt>
+                                <dd>This is the First Name</dd>
+                                <br>
+                                <dt><output id="olname"> </output></dt>
+                                <dd>This is the Last Name</dd>
+                                <br>
+                                <dt>
+                                    <output id="ossn"> </output>
+                                </dt>
+                                <dd>This is the SSN #</dd>
+                                <br>
+                                <dt><output id="oaddr"> </output> </dt>
+                                <dd>This is the Address</dd>
+                                <br>
+                                <dt> <output id="ocity"> </output> </dt>
+                                <dd>This is the City</dd>
+                                <br>
+                                <dt> <output id="ostate"> </output> </dt>
+                                <dd>This is the state</dd><br>
+                                <dt> <output id="ophn"> </output> </dt>
+                                <dd>This is the contact number</dd>
+                                <br>
+                                <dt> <output id="oemail"> </output> </dt>
+                                <dd>This is the Email ID</dd>
+                                <br>
+                            </dl>
+
+                        </div>
+
+                </form>
+            </section>
+      <section>      
+
+                <table class="table table-striped">
+                    <tr class="bg-info">
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>SSN</th>
+                        <th>Populate</th>
+
+                    </tr>
+
+                    <tbody id="myTable">
+
+                    </tbody>
+                </table>
+            </section>
+</body>
+<script>
+    function submitForm() {
+        document.getElementById('datarev').className = 'container2 visible';
+
+        document.getElementById('ofName').innerHTML = document.getElementById('fname').value;
+
+        document.getElementById('olname').innerHTML = document.getElementById('lname').value;
+
+        document.getElementById("ossn").innerHTML = document.getElementById('ssn').value;
+
+        document.getElementById('oaddr').innerHTML = document.getElementById('address').value;
+
+        document.getElementById('ocity').innerHTML = document.getElementById('city').value;
+
+        document.getElementById('ostate').innerHTML = document.getElementById('state').value;
+
+        document.getElementById('ophn').innerHTML = document.getElementById('phone').value;
+
+        document.getElementById('oemail').innerHTML = document.getElementById('email').value;
+
+
+        var ssn = document.getElementById('ssn').value
+
+        var length = ssn.length;
+
+        var lastNumber = ssn[length - 1];
+
+        /*alert(lastNumber);*/
+
+        if (lastNumber % 2 == 0)
+            alert('fail');
+        else
+            alert('pass');
+
+
+        var idmail = document.getElementById('email').value;
+
+        return validateEmail(idmail)
+    }
+    function validateEmail(sEmail) {
+        var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
+
+        if (!sEmail.match(reEmail)) {
+            /*alert("Invalid email address");*/
+            document.getElementById('oemail').className = 'fail';
+            alert('invalid email');
+
+        } else {
+            document.getElementById('oemail').className = 'pass';
+        }
+
+        return false;
+
+    }
+
+    var myArray = [
+
+        {
+            'FirstName': 'John', 'LastName': 'Doe', 'email': 'john@gmail.com', 'Phone': 1234567891, 'Address': '123 Main St', 'City': 'Pittsburgh', 'State': 'MD', 'SSN': '1235479564'
+        },
+        {
+            'FirstName': 'Paul', 'LastName': 'Debecker', 'email': 'pauldeb@gmail.com', 'Phone': 9876543291, 'Address': '51 West St', 'City': 'Mars', 'State': 'MD', 'SSN': '7489546121'
+        },
+        {
+            'FirstName': 'Sam', 'LastName': 'Anderson', 'email': 'samad@gmail.com', 'Phone': 7741544522, 'Address': '121 East St', 'City': 'Moon', 'State': 'MD', 'SSN': '458768641'
+        },
+        {
+            'FirstName': 'Tay', 'LastName': 'Green', 'email': 'taygre@gmail.com', 'Phone': 9784514264, 'Address': '784 north St', 'City': 'Pittsburgh', 'State': 'CA', 'SSN': '45757484'
+        }
+    ]
+
+
+
+    buildTable(myArray)
+
+    function buildTable(data) {
+        var tbody = document.getElementById('myTable');
+
+        for (var i = 0; i < data.length; i++) {
+            tbody.appendChild(tr = document.createElement("tr"));
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].FirstName;
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].LastName;
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].email;
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].Phone;
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].Address;
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].City;
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].State;
+            tr.appendChild(td = document.createElement("td"));
+            td.innerHTML=data[i].SSN;
+            tr.appendChild(td = document.createElement("td"));
+            
+            var button = document.createElement("button");
+            button.innerHTML = "Populate";
+            button.id=i;
+            button.onclick = function(buttonData) {
+                console.log(data);
+                console.log(this.id);
+                console.log(data[this.id]);
+                populate(data[this.id]);
+            }
+            td.appendChild(button);
+        }
+
+    }
+
+    function populate(data) {
+
+        document.getElementById("fname").value = data.FirstName;
+        document.getElementById("lname").value = data.LastName;
+        document.getElementById("ssn").value = data.SSN;
+        document.getElementById("address").value = data.Address;
+        document.getElementById("city").value = data.City;
+        document.getElementById("state").value = data.State;
+        document.getElementById("phone").value = data.Phone;
+        document.getElementById("email").value = data.email;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header{
+        height: 100vh;
+        background: #333 url(https://images.unsplash.com/photo-1613164700544-23ea1f4f350e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGl0dHNidXJnaCUyMHBlbm5zeWx2YW5pYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60)no-repeat center center/cover;
+        text-align: center;
+        padding: 2rem;
+        padding-top: 16rem;
+    }
+    header p{
+        margin: 1rem;
+    }
+    .btn {
+        display:inline-block;
+        padding: 1rem;
+        background: lightgrey;
+        color: grey;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    section {
+        padding: 2rem;
+    }
+    @media(max-height: 450px) {
+        header{
+            padding-top: 7rem;
+        }
+    }
+    .flex-container {
+        display: flex;
+        justify-content: right;
+    }
+    .item{
+        border: #ccc 2px solid;
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+<body>
+    
+    <header>
+        <div class="flex-container">
+            <div class="item">
+                About
+            </div>
+            <div class="item">
+                menu
+            </div>
+            <div>
+    
+            </div>
+        </div>
+        <h1>Welcome to my site</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt cupiditate alias reprehenderit ut minus ratione facilis earum animi asperiores illo perspiciatis nobis ullam labore tempora nam sequi quas doloribus optio blanditiis fugit aspernatur, ipsa velit voluptatem. Asperiores, perspiciatis est.</p>
+    <a class="btn">About Us</a>
+    </header>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, voluptates.</p>
+    </section>
+</body>
+</html>
